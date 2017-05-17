@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gtr.shoptest.WelcomeActivity">
+    tools:context="com.example.gtr.shoptest.SplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/entrance2"
+        android:scaleType="centerCrop"/>
 
 </android.support.constraint.ConstraintLayout>
