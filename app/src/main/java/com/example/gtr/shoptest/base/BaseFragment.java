@@ -47,7 +47,7 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 当子类需要联网请求数据的时候，可以重写该方法，在该方法中联网请求
      */
-    private void initData() {
+    public void initData() {
 
     }
 }
