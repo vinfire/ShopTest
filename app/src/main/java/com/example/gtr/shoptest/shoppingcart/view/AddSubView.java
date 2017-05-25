@@ -1,4 +1,4 @@
-package com.example.gtr.shoptest.shoppingcart;
+package com.example.gtr.shoptest.shoppingcart.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -24,8 +24,8 @@ public class AddSubView extends LinearLayout implements View.OnClickListener {
 
 
     private int value = 1;  //当前值
-    private int minValue;  //最小值
-    private int maxValue;  //最大值
+    private int minValue = 0;  //最小值
+    private int maxValue = 99;  //最大值
 
     public AddSubView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);

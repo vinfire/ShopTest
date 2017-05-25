@@ -13,6 +13,7 @@ public class GoodsBean implements Serializable {
     private String name;  //名称
     private String product_id;  //产品ID
     private int number = 1;  //产品数量
+    private boolean isSelected = true;  //是否被选中
 
     public String getCover_price() {
         return cover_price;
@@ -54,6 +55,14 @@ public class GoodsBean implements Serializable {
         this.number = number;
     }
 
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
     @Override
     public String toString() {
         return "GoodsBean{" +
@@ -62,6 +71,7 @@ public class GoodsBean implements Serializable {
                 ", name='" + name + '\'' +
                 ", product_id='" + product_id + '\'' +
                 ", number=" + number +
+                ", isSelected=" + isSelected +
                 '}';
     }
 }

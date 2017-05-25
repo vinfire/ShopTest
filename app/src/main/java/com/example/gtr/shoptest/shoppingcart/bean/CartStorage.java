@@ -2,6 +2,7 @@ package com.example.gtr.shoptest.shoppingcart.bean;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.SparseArray;
 
 import com.example.gtr.shoptest.MyApplication;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class CartStorage {
 
+    private static final String TAG = "CartStorage";
     private final Context mContext;
     private final String JSON_CART = "json_cart";
     //SparseArray的性能优于HashMap，用于存放<Interger,Object>
@@ -37,6 +39,9 @@ public class CartStorage {
      */
     private void listToSparseArray() {
         List<GoodsBean> goodsBeanList = getAllData();
+        if (goodsBeanList == null){
+            Log.i(TAG, "listToSparseArray: "+null);
+        }
         //把List数据转换成SparseArray
         for (int i = 0; i < goodsBeanList.size(); i++) {
             GoodsBean goodsBean = goodsBeanList.get(i);
@@ -53,7 +58,7 @@ public class CartStorage {
         //1. 从本地获取
         String json = CacheUtils.getString(mContext, JSON_CART);
         //2. 使用Gson转换成列表
-        if (TextUtils.isEmpty(json)){
+        if (!TextUtils.isEmpty(json)){
 
             //用Gson把String转换成List
             goodsBeanList = new Gson().fromJson(json, new TypeToken<List<GoodsBean>>(){}.getType());
